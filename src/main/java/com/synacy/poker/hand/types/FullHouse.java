@@ -29,7 +29,11 @@ public class FullHouse extends Hand {
      */
     @Override
     public String toString() {
-        return "";
+        if(threeOfAKindCards.size() != 0 && pairCards.size() != 0)
+            return "Full House (" + threeOfAKindCards.get(0).getRank()
+                    +  "," + pairCards.get(0).getRank() + ")";
+        else
+            return "";
     }
 
 }

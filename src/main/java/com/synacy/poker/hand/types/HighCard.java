@@ -4,6 +4,7 @@ import com.synacy.poker.card.Card;
 import com.synacy.poker.hand.Hand;
 import com.synacy.poker.hand.HandType;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -15,6 +16,7 @@ public class HighCard extends Hand {
 
     public HighCard(List<Card> cards) {
         this.cards = cards;
+        Collections.sort(cards);
     }
 
     public HandType getHandType() {
@@ -26,7 +28,15 @@ public class HighCard extends Hand {
      */
     @Override
     public String toString() {
-        return "";
+        String message = "";
+        for(int i = 0 ; i < 5 ; i++)
+        {
+            message += cards.get(i).getRank().toString() + ",";
+        }
+
+        message = message.substring(0, message.length() - 1);
+
+        return message;
     }
 
 }

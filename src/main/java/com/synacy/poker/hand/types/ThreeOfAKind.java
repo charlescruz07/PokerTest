@@ -28,7 +28,21 @@ public class ThreeOfAKind extends Hand {
      */
     @Override
     public String toString() {
-        return "";
+        String message = "";
+        if(otherCards.size() >= 2)
+        {
+            for(int i = 0 ; i < 2 ; i++)
+            {
+                message += otherCards.get(i).getRank() + ",";
+            }
+        }
+
+        if(message.length() > 0)
+            message = " - " + message.substring(0,message.length()-1) + " High";
+        return "Trips (" + threeOfAKindCards.get(0).getRank() + ")" + message;
     }
 
+    public List<Card> getThreeOfAKindCards() {
+        return threeOfAKindCards;
+    }
 }

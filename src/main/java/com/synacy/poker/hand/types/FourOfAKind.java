@@ -28,7 +28,15 @@ public class FourOfAKind extends Hand {
      */
     @Override
     public String toString() {
-        return "";
+        String message = "";
+        if(otherCards.size() != 0)
+        {
+            if(otherCards.size() != 0)
+            {
+                message = " - " + otherCards.get(0).getRank() + " High";
+            }
+        }
+        return "Quads (" + fourOfAKindCards.get(0).getRank() + ")" + message;
     }
 
 }
