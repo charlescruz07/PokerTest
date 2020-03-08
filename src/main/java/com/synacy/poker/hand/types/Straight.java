@@ -30,7 +30,10 @@ public class Straight extends Hand {
      */
     @Override
     public String toString() {
-        return "";
+        if(cards.size() > 0)
+            return "Straight (" + cards.get(0).getRank().toString() + " High)";
+        else
+            return "";
     }
 
 }

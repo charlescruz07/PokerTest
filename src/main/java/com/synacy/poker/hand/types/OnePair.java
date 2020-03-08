@@ -29,7 +29,22 @@ public class OnePair extends Hand {
      */
     @Override
     public String toString() {
-        return "";
+        String message = "";
+        if(otherCards.size() >= 3)
+        {
+            for(int i = 0 ; i < 3 ; i++)
+            {
+                message += otherCards.get(i).getRank() + ",";
+            }
+        }
+
+        if(message.length() > 0)
+            message = " - " + message.substring(0,message.length()-1) + " High";
+
+        return "One Pair (" + pairCards.get(0).getRank() + ")" + message;
     }
 
+    public List<Card> getPairCards() {
+        return pairCards;
+    }
 }

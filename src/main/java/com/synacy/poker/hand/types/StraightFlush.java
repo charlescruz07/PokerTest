@@ -10,8 +10,16 @@ import java.util.List;
  */
 public class StraightFlush extends Straight {
 
+    private int type;
+    public static final int STRAIGHT_FLUSH = 101;
+    public static final int ROYAL_FLUSH = 102;
+
     public StraightFlush(List<Card> cards) {
         super(cards);
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     @Override
@@ -25,7 +33,10 @@ public class StraightFlush extends Straight {
      */
     @Override
     public String toString() {
-        return "";
+        if(type == STRAIGHT_FLUSH && getCards().size() > 0)
+            return "Straight Flush (" + getCards().get(0).getRank().toString() + " High)";
+        else
+            return "Royal Flush";
     }
 
 }

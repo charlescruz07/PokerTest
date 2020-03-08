@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * The card in a deck. A combination of {@link CardRank} and {@link CardSuit}
  */
-public class Card {
+public class Card implements Comparable<Card>{
 
 	private CardRank rank;
 	private CardSuit suit;
@@ -58,4 +58,11 @@ public class Card {
 		return Objects.hash(rank, suit);
 	}
 
+	@Override
+	public int compareTo(Card card) {
+		int compareCardVal = card.getRank().getIntVal();
+
+		//descending order
+		return compareCardVal - this.getRank().getIntVal();
+	}
 }

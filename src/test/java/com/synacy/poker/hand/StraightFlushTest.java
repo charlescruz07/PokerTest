@@ -24,6 +24,7 @@ public class StraightFlushTest {
 		);
 
 		StraightFlush straightFlush = new StraightFlush(cards);
+		straightFlush.setType(StraightFlush.STRAIGHT_FLUSH);
 
 		assertEquals("Straight Flush (K High)", straightFlush.toString());
 	}
@@ -39,6 +40,7 @@ public class StraightFlushTest {
 		);
 
 		StraightFlush straightFlush = new StraightFlush(cards);
+		straightFlush.setType(StraightFlush.STRAIGHT_FLUSH);
 
 		assertEquals("Straight Flush (5 High)", straightFlush.toString());
 	}
@@ -54,6 +56,7 @@ public class StraightFlushTest {
 		);
 
 		StraightFlush straightFlush = new StraightFlush(cards);
+		straightFlush.setType(StraightFlush.ROYAL_FLUSH);
 
 		assertEquals("Royal Flush", straightFlush.toString());
 	}

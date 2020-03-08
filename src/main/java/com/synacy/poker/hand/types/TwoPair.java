@@ -30,7 +30,15 @@ public class TwoPair extends Hand {
      */
     @Override
     public String toString() {
-        return "";
+        String message = "";
+        if(otherCards.size() != 0)
+        {
+            if(otherCards.size() != 0)
+            {
+                message = " - " + otherCards.get(0).getRank() + " High";
+            }
+        }
+        return "Two Pair (" + firstPairCards.get(0).getRank() + "," + secondPairCards.get(0).getRank() + ")" + message;
     }
 
 }

@@ -30,7 +30,7 @@ public class Flush extends Hand {
      */
     @Override
     public String toString() {
-        return "";
+        return "Flush (" + cards.get(0).getRank() + " High)";
     }
 
 }
